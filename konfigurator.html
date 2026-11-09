@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navrhni si oblek | Armando Rossetti – Sartoria Italiana</title>
+<meta name="description" content="Sestavte si oblek podle sebe: značka, barva, střih, velikost, vzor a doplňky. Návrh uvidíte hned.">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#15100a;--panel:#1d1710;--gold:#c9973f;--gold2:#e2bd6b;--ivory:#ece6da;--mute:#b9b0a0;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost","Helvetica Neue",Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ivory);font:300 1.0625rem/1.6 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;color:var(--gold)}
+header{background:rgba(21,16,10,.96);border-bottom:1px solid rgba(201,151,63,.35)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:48px}
+.brand span{font-family:var(--serif);color:var(--gold);font-size:1.25rem;letter-spacing:.22em}
+.back{text-decoration:none;color:var(--mute);border-bottom:1px solid transparent}
+.back:hover{color:var(--gold2);border-color:var(--gold2)}
+.intro{padding:48px 0 28px}
+.intro h1{font-size:clamp(2.4rem,5vw,4rem)}
+.intro p{color:var(--mute);max-width:60ch;margin-top:10px}
+.cfg{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:44px;padding-bottom:80px;align-items:start}
+.stage{position:sticky;top:20px;border:1px solid var(--gold);outline:1px solid rgba(201,151,63,.3);outline-offset:6px;background:radial-gradient(ellipse at 50% 35%,#33281a,#15100a 78%);padding:18px 18px 22px}
+.stage svg{display:block;width:100%;max-height:68vh;margin:0 auto}
+.stage h2{font-size:1.5rem;text-align:center;margin:6px 0 10px}
+.sum{list-style:none;padding:0;font-size:.95rem;color:var(--mute);display:grid;grid-template-columns:1fr 1fr;gap:2px 18px;border-top:1px solid rgba(201,151,63,.4);padding-top:12px}
+.sum b{color:var(--ivory);font-weight:400}
+.act{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btn{display:inline-block;padding:12px 24px;border:1px solid var(--gold);color:var(--gold2);background:none;font:400 1rem var(--sans);text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--gold);color:#1a1209}
+.btn.fill{background:var(--gold);color:#1a1209}
+.btn.fill:hover{background:var(--gold2)}
+fieldset{border:0;padding:0;margin:0 0 30px;min-width:0}
+legend{font-family:var(--serif);font-size:1.7rem;color:var(--gold);padding:0 0 10px;width:100%;border-bottom:1px solid rgba(201,151,63,.4);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid rgba(201,151,63,.45);color:var(--ivory);transition:background .15s,border-color .15s}
+.chip:hover span{border-color:var(--gold2)}
+.chip input:checked+span{background:var(--gold);border-color:var(--gold);color:#1a1209;font-weight:400}
+.chip input:focus-visible+span{outline:2px solid var(--gold2);outline-offset:3px}
+.chip i{width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.45);flex:none}
+.acc{margin-bottom:18px}
+.acc .chips{margin:10px 0 0 4px;padding-left:14px;border-left:1px solid var(--gold)}
+.acc .chips[hidden]{display:none}
+.note{font-size:.9rem;color:var(--mute);font-style:italic;margin-top:14px}
+@media(max-width:900px){.cfg{grid-template-columns:1fr}.stage{position:static}.stage svg{max-height:60vh}}
+@media(max-width:520px){.brand span{font-size:1rem}.sum{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="index.html"><img src="images/logo.jpg" alt="Logo Armando Rossetti"><span>ARMANDO ROSSETTI</span></a>
+<a class="back" href="index.html">Zpět na hlavní stránku</a>
+</div></header>
+<main class="wrap">
+<div class="intro"><h1>Navrhni si oblek</h1><p>Vyberte značku, barvu, střih, velikost, vzor a doplňky. Návrh se vám vykreslí hned a poptávku pak odešlete jedním kliknutím.</p></div>
+<form class="cfg" id="f" onsubmit="return false">
+<div class="stage">
+<svg id="v" viewBox="0 0 300 510" role="img" aria-label="Náhled vašeho obleku"></svg>
+<h2 id="t"></h2>
+<ul class="sum" id="s"></ul>
+<div class="act"><a class="btn fill" id="m" href="#">Odeslat poptávku e-mailem</a><button type="button" class="btn" onclick="print()">Vytisknout návrh</button></div>
+</div>
+<div id="o"></div>
+</form>
+</main>
+<script>
+const BR=['Armando Rossetti','Bellini & Conti','Lorenzo Vitale','Giacomo Ferrante'];
+const COL=[['Námořnická modrá','#1c2a4d'],['Antracit','#2a2d33'],['Světle šedá','#8a8d93'],['Černá','#0f0f12'],['Písková','#b9a27d'],['Bordó','#4a1a28'],['Lahvově zelená','#1f3b2e'],['Čokoládová','#4a3224']];
+const CUT=[['Jednořadový','sb'],['Dvouřadový','db'],['Tříkusový (s vestou)','vest'],['Smoking','tux']];
+const FIT=[['Slim',.9],['Klasický',1],['Volný',1.08]];
+const SIZ=[46,48,50,52,54,56,58,60];
+const PAT=[['Jednobarevný','none'],['Jemný proužek','pin'],['Široký proužek','wide'],['Kostka','check'],['Rybí kost','herr']];
+const TC=[['Modrá','#24407a'],['Bordó','#8d1f2e'],['Zlatá','#c9973f'],['Černá','#111'],['Stříbrná','#aeb3bd']];
+const ACC=[
+{id:'tie',n:'Kravata',o:TC,on:1},{id:'bow',n:'Motýlek',o:TC},
+{id:'poc',n:'Kapesníček',o:[['Bílý','#f4efe4'],['Zlatý','#d9b25f'],['Bordó','#8d1f2e'],['Modrý','#3a5fa5']],on:1},
+{id:'belt',n:'Pásek',o:[['Černý','#111'],['Hnědý','#5a3a22']]},
+{id:'shoe',n:'Boty',o:[['Černé','#0d0d0f'],['Hnědé','#5a3a22'],['Vínové','#4a1a1f']],on:1},
+{id:'watch',n:'Hodinky',o:[['Zlaté','#d4a64a'],['Stříbrné','#c4c8d0']]}];
+const $=id=>document.getElementById(id),F=$('f');
+function grp(key,title,items,def,sw){return `<fieldset><legend>${title}</legend><div class="chips">`+items.map((it,i)=>`<label class="chip"><input type="radio" name="${key}" value="${i}"${i==def?' checked':''}><span>${sw?`<i style="background:${it[1]}"></i>`:''}${it[0]??it}</span></label>`).join('')+`</div></fieldset>`}
+$('o').innerHTML=grp('br','Značka',BR.map(b=>[b]),0)+grp('col','Barva',COL,0,1)+grp('cut','Střih',CUT,0)+grp('fit','Padnutí',FIT,1)+grp('siz','Velikost',SIZ.map(x=>[x]),2)+grp('pat','Vzor',PAT,0)+
+`<fieldset><legend>Doplňky</legend>`+ACC.map(a=>`<div class="acc"><label class="chip"><input type="checkbox" name="a-${a.id}"${a.on?' checked':''}><span>${a.n}</span></label><div class="chips" id="c-${a.id}"${a.on?'':' hidden'}>`+a.o.map((c,i)=>`<label class="chip"><input type="radio" name="c-${a.id}" value="${i}"${i==0?' checked':''}><span><i style="background:${c[1]}"></i>${c[0]}</span></label>`).join('')+`</div></div>`).join('')+`<p class="note">Návrh je ilustrační. Konkrétní látky, velikosti a ceny upřesníme v showroomu.</p></fieldset>`;
+const val=k=>+F.querySelector(`input[name=${k}]:checked`).value;
+function lum(h){const n=parseInt(h.slice(1),16);return .3*(n>>16)+.59*(n>>8&255)+.11*(n&255)}
+function draw(s){
+const c=COL[s.col][1],k=CUT[s.cut][1],tx=k=='tux',sc=lum(c)>120?'#000':'#fff',a=s.acc;
+const pats={pin:`<pattern id="pp" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M2 0V7" stroke="${sc}" stroke-opacity=".28"/></pattern>`,
+wide:`<pattern id="pp" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M4 0V17" stroke="${sc}" stroke-opacity=".22" stroke-width="3"/></pattern>`,
+check:`<pattern id="pp" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M0 12H24M12 0V24" stroke="${sc}" stroke-opacity=".2" stroke-width="2"/><path d="M0 1H24M1 0V24" stroke="${sc}" stroke-opacity=".12"/></pattern>`,
+herr:`<pattern id="pp" width="12" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L6 1L12 8" fill="none" stroke="${sc}" stroke-opacity=".28"/></pattern>`};
+const P=pats[PAT[s.pat][1]],ov=d=>P?`<path d="${d}" fill="url(#pp)"/>`:'';
+const py=k=='db'?196:232,J='M125 64h50l50 20 32 36 10 214H33l10-214 32-36z',T='M105 316H149L147 470H103Z M151 316H195L197 470H153Z';
+const lap=(m)=>{const X=x=>m?300-x:x;return `M${X(124)} 64L150 ${py}L${X(108)} ${py-70}L${X(94)} ${py-100}L${X(100)} 98Z`};
+const lf=tx?'#0d0d10':c,fx=tx?'':'<path d="'+lap(0)+lap(1)+'" fill="#fff" fill-opacity=".1"/>';
+const sh=a.shoe?`<path d="M90 468h58v14q-2 8-30 8-28 0-30-8zM152 468h58v14q-2 8-30 8-28 0-30-8z" fill="${a.shoe}"/>`:'';
+const vest=k=='vest'?`<path d="M126 120L150 158L174 120H232V262H68V120Z" fill="${c}"/><path d="M126 120L150 158L174 120H232V262H68V120Z" fill="#fff" fill-opacity=".12" stroke="#000" stroke-opacity=".4"/>${[176,196,216].map(y=>`<circle cx="150" cy="${y}" r="2.6" fill="#000" fill-opacity=".6"/>`).join('')}`:'';
+const tie=a.tie?`<path d="M143 86h14l3 10h-20zM141 96h18l8 112-17 14-17-14z" fill="${a.tie}" stroke="#000" stroke-opacity=".35"/>`:a.bow?`<path d="M150 80L122 66v28zM150 80L178 66v28z" fill="${a.bow}" stroke="#000" stroke-opacity=".35"/><rect x="144" y="73" width="12" height="14" rx="3" fill="${a.bow}" stroke="#000" stroke-opacity=".4"/>`:'';
+const btn=k=='db'?[[126,246],[174,246],[126,282],[174,282],[126,314],[174,314]]:k=='tux'?[[150,266]]:[[150,262],[150,294]];
+return `<defs>${P||''}<clipPath id="vc"><path d="M125 64h50L150 ${py}z"/></clipPath><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".02"/><stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity=".02"/></linearGradient></defs>
+<ellipse cx="150" cy="492" rx="95" ry="9" fill="#000" fill-opacity=".5"/>${sh}
+<g transform="translate(150 0) scale(${s.fit} 1) translate(-150 0)">
+<ellipse cx="52" cy="352" rx="13" ry="19" fill="#d6a784"/><ellipse cx="248" cy="352" rx="13" ry="19" fill="#d6a784"/>
+<path d="${T}" fill="${c}"/>${ov(T)}${tx?'<path d="M104 320L103 470M196 320L197 470" stroke="#000" stroke-width="5"/>':''}
+<path d="${J}" fill="${c}"/>${ov(J)}
+<path d="M75 120L72 334M225 120L228 334M${k=='db'?'150 196V334':'150 '+py+'V334'}" stroke="#000" stroke-opacity=".3" fill="none"/>
+<g clip-path="url(#vc)"><path d="M100 60h100v190H100z" fill="#f4f0e6"/>${vest}${tie}</g>
+<path d="M126 62l24 24-26 4zM174 62l-24 24 26 4z" fill="#f7f3ea" stroke="#000" stroke-opacity=".25"/>${a.bow?tie.replace(/^.*$/,'')&&'':''}
+<path d="${lap(0)}${lap(1)}" fill="${lf}" stroke="#000" stroke-opacity=".4"/>${fx}${tx?`<path d="${lap(0)}${lap(1)}" fill="url(#gl)"/>`:''}
+${a.bow?`<path d="M150 80L122 66v28zM150 80L178 66v28z" fill="${a.bow}" stroke="#000" stroke-opacity=".35"/><rect x="144" y="73" width="12" height="14" rx="3" fill="${a.bow}"/>`:''}
+<path d="M62 296h44M194 296h44M184 152l28-6" stroke="#000" stroke-opacity=".4" stroke-width="2"/>
+${a.poc?`<path d="M183 152l5-13 9 5 7-7 9 9v6z" fill="${a.poc}" stroke="#000" stroke-opacity=".3"/>`:''}
+${btn.map(b=>`<circle cx="${b[0]}" cy="${b[1]}" r="3.4" fill="#000" fill-opacity=".6"/>`).join('')}
+${a.watch?`<rect x="40" y="334" width="24" height="9" rx="2" fill="#222"/><circle cx="52" cy="339" r="8" fill="${a.watch}" stroke="#000" stroke-opacity=".5"/>`:''}
+</g>`}
+function upd(){
+ACC.forEach(a=>{$('c-'+a.id).hidden=!F['a-'+a.id].checked});
+const s={col:val('col'),cut:val('cut'),pat:val('pat'),acc:{}};
+s.fit=FIT[val('fit')][1]*(.96+.0045*(SIZ[val('siz')]-46));
+ACC.forEach(a=>{if(F['a-'+a.id].checked)s.acc[a.id]=a.o[val('c-'+a.id)][1]});
+$('v').innerHTML=draw(s);
+const nm=(a)=>a.o[val('c-'+a.id)][0];
+const L=[['Značka',BR[val('br')]],['Barva',COL[s.col][0]],['Střih',CUT[s.cut][0]],['Padnutí',FIT[val('fit')][0]],['Velikost',SIZ[val('siz')]],['Vzor',PAT[s.pat][0]]];
+const dop=ACC.filter(a=>F['a-'+a.id].checked).map(a=>a.n+' ('+nm(a).toLowerCase()+')');
+$('t').textContent=BR[val('br')]+' – '+CUT[s.cut][0].toLowerCase();
+$('s').innerHTML=L.map(x=>`<li>${x[0]}: <b>${x[1]}</b></li>`).join('')+`<li style="grid-column:1/-1">Doplňky: <b>${dop.length?dop.join(', '):'bez doplňků'}</b></li>`;
+const body='Dobrý den,\n\nzajímám se o oblek v tomto provedení:\n\n'+L.map(x=>x[0]+': '+x[1]).join('\n')+'\nDoplňky: '+(dop.length?dop.join(', '):'bez doplňků')+'\n\nProsím o kontaktování.\n';
+$('m').href='mailto:armandorossetti@seznam.cz?subject='+encodeURIComponent('Poptávka obleku – návrh z webu')+'&body='+encodeURIComponent(body);
+}
+F.addEventListener('change',e=>{
+const n=e.target.name;
+if(e.target.checked&&n=='a-tie')F['a-bow'].checked=false;
+if(e.target.checked&&n=='a-bow')F['a-tie'].checked=false;
+upd()});
+upd();
+</script>
+</body>
+</html>

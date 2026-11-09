@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Armando Rossetti – Sartoria Italiana | Prémiový obchod obleků a doplňků v Mostě</title>
+<meta name="description" content="Prémiový obchod obleků a doplňků v Mostě. Obleky značky Armando Rossetti i dalších značek, kravaty, motýlky, pásky, boty a hodinky.">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#15100a;--panel:#1d1710;--navy:#0b1630;--gold:#c9973f;--gold2:#e2bd6b;--ivory:#ece6da;--mute:#b9b0a0;--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Jost","Helvetica Neue",Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ivory);font:300 1.0625rem/1.7 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;color:var(--gold)}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.5rem}
+.rule{display:flex;align-items:center;gap:12px;color:var(--gold);margin:1.4rem 0}
+.rule:before,.rule:after{content:"";height:1px;background:var(--gold);flex:0 0 70px;opacity:.7}
+.rule i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.rule.c{justify-content:center}
+header{position:sticky;top:0;z-index:5;background:rgba(21,16,10,.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(201,151,63,.35)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:48px;width:auto}
+.brand span{font-family:var(--serif);color:var(--gold);font-size:1.25rem;letter-spacing:.22em}
+nav{display:flex;gap:26px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.95rem;color:var(--mute);padding:4px 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--gold2);border-color:var(--gold2)}
+.hero{border-bottom:1px solid rgba(201,151,63,.25)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;align-items:end;gap:20px;min-height:min(82vh,760px)}
+.hero-text{align-self:center;padding:56px 0}
+.hero h1{font-size:clamp(3rem,7vw,5.6rem);color:var(--gold)}
+.hero p{font-size:1.35rem;font-family:var(--serif);max-width:26ch;color:var(--ivory)}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:13px 28px;text-decoration:none;border:1px solid var(--gold);color:var(--gold2);font-weight:400;letter-spacing:.04em;transition:background .2s,color .2s}
+.btn:hover{background:var(--gold);color:#1a1209}
+.btn.fill{background:var(--gold);color:#1a1209}
+.btn.fill:hover{background:var(--gold2)}
+.hero img{width:100%;display:block;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent)}
+section{padding:92px 0}
+.lead{max-width:60ch;color:var(--mute)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:40px}
+.about div{border-left:1px solid var(--gold);padding-left:24px}
+.about h3{font-size:1.7rem;margin-bottom:.5rem}
+.about p{color:var(--mute)}
+.coll{background:var(--panel);border-block:1px solid rgba(201,151,63,.25)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+.suit{background:radial-gradient(ellipse at 50% 30%,#2b2216,#16110a 75%);border:1px solid rgba(201,151,63,.45);outline:1px solid rgba(201,151,63,.2);outline-offset:-8px;padding:30px 30px 22px}
+.suit svg{width:100%;max-width:230px;display:block;margin:0 auto 14px;fill:var(--s)}
+.suit figcaption b{display:block;font-family:var(--serif);font-weight:500;font-size:1.45rem;color:var(--gold2)}
+.suit figcaption{color:var(--mute);font-size:.98rem;line-height:1.5}
+.note{margin-top:28px;font-size:.92rem;color:var(--mute);font-style:italic}
+.acc{display:grid;grid-template-columns:repeat(5,1fr);margin-top:44px;border-block:1px solid rgba(201,151,63,.45)}
+.acc div{padding:28px 18px;text-align:center;border-left:1px solid rgba(201,151,63,.45)}
+.acc div:first-child{border-left:0}
+.acc h3{font-size:1.5rem;margin-bottom:.4rem}
+.acc p{font-size:.95rem;color:var(--mute);line-height:1.55}
+.fair{background:var(--navy);border-block:1px solid var(--gold)}
+.fair .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.fair img{width:100%;display:block;border:1px solid var(--gold);outline:1px solid rgba(201,151,63,.4);outline-offset:6px}
+.badge{display:inline-block;margin:1.2rem 0;padding:14px 26px;background:linear-gradient(120deg,#b98532,#f0cd7a 50%,#b98532);color:#1a1209;font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3vw,2.2rem)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:40px}
+.contact dl{display:grid;grid-template-columns:110px 1fr;gap:14px 12px}
+.contact dt{color:var(--gold)}
+.contact a{text-decoration:none;border-bottom:1px solid rgba(201,151,63,.5)}
+.contact a:hover{color:var(--gold2)}
+.card{border:1px solid var(--gold);outline:1px solid rgba(201,151,63,.3);outline-offset:6px;padding:36px;text-align:center;background:var(--panel)}
+.card img{height:92px;margin-bottom:12px}
+.card p{font-family:var(--serif);font-size:1.4rem;color:var(--ivory)}
+footer{border-top:1px solid rgba(201,151,63,.35);padding:26px 0;text-align:center;color:var(--mute);font-size:.9rem}
+@media(max-width:900px){.hero .wrap,.about,.fair .wrap,.contact{grid-template-columns:1fr}.hero img{max-width:460px;margin:0 auto}.grid{grid-template-columns:1fr 1fr}.acc{grid-template-columns:1fr 1fr}.acc div{border-top:1px solid rgba(201,151,63,.45)}.acc div:nth-child(odd){border-left:0}section{padding:64px 0}.fair img{order:-1}}
+@media(max-width:560px){.grid,.acc{grid-template-columns:1fr}.acc div{border-left:0}nav{gap:16px}.brand span{font-size:1rem}.contact dl{grid-template-columns:90px 1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<pattern id="pin" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M3 0v9" stroke="#fff" stroke-opacity=".2"/></pattern>
+<symbol id="j" viewBox="0 0 200 250">
+<path d="M78 34h44l36 14 28 32 8 160H6l8-160 28-32z"/>
+<path d="M78 34h44l36 14 28 32 8 160H6l8-160 28-32z" style="fill:var(--stripe,none)"/>
+<path d="M48 90l-6 150M152 90l6 150M100 150v90" stroke="#000" stroke-opacity=".28" fill="none"/>
+<path d="M80 36h40l-20 114z" fill="#efe9dc"/>
+<path d="M94 44h12l4 18-10 66-10-66z" style="fill:var(--t)"/>
+<path d="M62 62l18-26 20 114-28-32zM138 62l-18-26-20 114 28-32z" fill="#fff" fill-opacity=".09" stroke="#000" stroke-opacity=".3"/>
+<circle cx="100" cy="172" r="3" fill="#000" fill-opacity=".55"/><circle cx="100" cy="196" r="3" fill="#000" fill-opacity=".55"/>
+<path d="M52 208h32M116 208h32" stroke="#000" stroke-opacity=".35" stroke-width="2"/>
+<path d="M126 108h16v7h-16z" fill="#f4efe4"/>
+</symbol></defs></svg>
+
+<header><div class="wrap">
+<a class="brand" href="#top"><img src="images/logo.jpg" alt="Logo Armando Rossetti"><span>ARMANDO ROSSETTI</span></a>
+<nav aria-label="Hlavní menu"><a href="#o-nas">O nás</a><a href="#obleky">Obleky</a><a href="konfigurator.html">Navrhni si oblek</a><a href="#doplnky">Doplňky</a><a href="#akce">Akce</a><a href="#kontakt">Kontakt</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="hero-text">
+<h1>Oblékni si eleganci</h1>
+<div class="rule"><i></i></div>
+<p>Prémiový obchod obleků a doplňků. Sartoria Italiana v Mostě.</p>
+<div class="btns"><a class="btn fill" href="#kontakt">Navštivte náš showroom</a><a class="btn" href="konfigurator.html">Navrhni si oblek</a></div>
+</div>
+<img src="images/hero.jpg" alt="Muž v tmavě modrém obleku s kravatou a kapesníčkem">
+</div></div>
+
+<section id="o-nas"><div class="wrap">
+<h2>Sartoria Italiana</h2>
+<p class="lead">Armando Rossetti je prémiová značka obleků a doplňků. V našem showroomu v Mostě najdete oblek pro každou příležitost, od obchodního jednání po svatbu, a vše, co k němu patří.</p>
+<div class="about">
+<div><h3>Značka Armando Rossetti</h3><p>Obleky naší vlastní značky jsou jádrem nabídky. Klasické střihy, kvalitní látky a důraz na detail, které poznáte na první pohled.</p></div>
+<div><h3>Další značky</h3><p>Kromě vlastní kolekce nabízíme i vybrané obleky dalších značek, abyste si mohli vybrat podle střihu, látky i ceny na jednom místě.</p></div>
+</div></div></section>
+
+<section id="obleky" class="coll"><div class="wrap">
+<h2>Obleky</h2>
+<p class="lead">Ukázka toho, co v showroomu najdete. Barvy, vzory a střihy vám rádi předvedeme osobně.</p>
+<div class="grid">
+<figure class="suit" style="--s:#1c2a4d;--t:#8d1f2e"><svg viewBox="0 0 200 250" role="img" aria-label="Tmavě modrý oblek"><use href="#j"/></svg><figcaption><b>Modrý Milano</b>Tmavě modrý jednořadový oblek, univerzální volba na každý den i obřad.</figcaption></figure>
+<figure class="suit" style="--s:#2a2d33;--t:#4a5a8a"><svg viewBox="0 0 200 250" role="img" aria-label="Antracitový oblek"><use href="#j"/></svg><figcaption><b>Antracit Torino</b>Tmavě šedý oblek do kanceláře i na jednání, snadno se kombinuje.</figcaption></figure>
+<figure class="suit" style="--s:#16213f;--t:#c9973f;--stripe:url(#pin)"><svg viewBox="0 0 200 250" role="img" aria-label="Modrý oblek s proužkem"><use href="#j"/></svg><figcaption><b>Proužek Firenze</b>Tmavě modrý oblek s jemným křídovým proužkem pro formální příležitosti.</figcaption></figure>
+<figure class="suit" style="--s:#b9a27d;--t:#2c3a5e"><svg viewBox="0 0 200 250" role="img" aria-label="Písková oblek"><use href="#j"/></svg><figcaption><b>Písková Capri</b>Světlý letní oblek pro svatby, slavnosti a teplé dny.</figcaption></figure>
+<figure class="suit" style="--s:#4a1a28;--t:#d9c9a3"><svg viewBox="0 0 200 250" role="img" aria-label="Bordó oblek"><use href="#j"/></svg><figcaption><b>Bordó Venezia</b>Výrazný vínový oblek na večerní akce a společenské události.</figcaption></figure>
+<figure class="suit" style="--s:#0e0e11;--t:#0e0e11"><svg viewBox="0 0 200 250" role="img" aria-label="Černý oblek"><use href="#j"/></svg><figcaption><b>Černý Roma</b>Elegantní černý oblek na plesy, galavečery a slavnostní příležitosti.</figcaption></figure>
+</div>
+<div class="btns"><a class="btn fill" href="konfigurator.html">Navrhněte si vlastní oblek</a></div>
+<p class="note">Obrázky jsou ilustrační. Aktuální nabídku, velikosti a ceny vám poradíme v showroomu.</p>
+</div></section>
+
+<section id="doplnky"><div class="wrap">
+<h2>Doplňky</h2>
+<p class="lead">Správný detail dotvoří celý outfit. K obleku nabízíme vše, co potřebujete.</p>
+<div class="acc">
+<div><h3>Kravaty</h3><p>Hedvábné i vzorované, k obleku i košili.</p></div>
+<div><h3>Motýlky</h3><p>Pro společenské akce a slavnostní příležitosti.</p></div>
+<div><h3>Pásky</h3><p>Kožené pásky v klasických barvách.</p></div>
+<div><h3>Boty</h3><p>Společenská obuv, která ladí s oblekem.</p></div>
+<div><h3>Hodinky</h3><p>Pánské hodinky jako elegantní dokončení.</p></div>
+</div></div></section>
+
+<section id="akce" class="fair"><div class="wrap">
+<div>
+<h2>Veletržní akce</h2>
+<div class="badge">Sleva 10 % na vše</div>
+<p class="lead">Navštivte nás na veletrhu a využijte slevu 10 % na veškerý sortiment: obleky, kravaty, motýlky, pásky, boty i hodinky.</p>
+<div class="btns"><a class="btn fill" href="#kontakt">Kde nás najdete</a></div>
+</div>
+<img src="images/veletrh.jpg" alt="Muž v modrém proužkovaném obleku" loading="lazy">
+</div></section>
+
+<section id="kontakt"><div class="wrap">
+<h2>Navštivte náš showroom</h2>
+<p class="lead">Přijďte se podívat, vyzkoušet a nechat si poradit.</p>
+<div class="contact">
+<dl>
+<dt>Adresa</dt><dd><a href="https://mapy.cz/zakladni?q=Zde%C5%88ka%20Fibicha%202778%2F20%20Most" target="_blank" rel="noopener">Zdeňka Fibicha 2778/20<br>434 01 Most</a></dd>
+<dt>Telefon</dt><dd><a href="tel:+420000000000">+420 000 000 000</a></dd>
+<dt>E-mail</dt><dd><a href="mailto:armandorossetti@seznam.cz">armandorossetti@seznam.cz</a></dd>
+<dt>Web</dt><dd>www.armandorossetti.com</dd>
+</dl>
+<div class="card"><img src="images/logo.jpg" alt=""><p>Armando Rossetti<br>Sartoria Italiana</p></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">© <span id="y">2026</span> Armando Rossetti – Sartoria Italiana. Prémiový obchod obleků a doplňků.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
